@@ -15,9 +15,7 @@
         <img src="https://img.shields.io/twitter/follow/varuntomar2019?style=social&logo=twitter"></a>
 </p>
 
-## Terraform module for [AWS Container Registry](https://registry.terraform.io/modules/tomarv2/ecr/aws/latest)
-
-####
+# Terraform module for [AWS Container Registry](https://registry.terraform.io/modules/tomarv2/ecr/aws/latest)
 
 > :arrow_right:  Terraform module for [Azure Container Registry](https://registry.terraform.io/modules/tomarv2/container-registry/azure/latest)
 
@@ -46,7 +44,7 @@ python3 -m venv <venv name>
 
 - Install package:
 ```
-pip install tfremote
+pip install tfremote --upgrade
 ```
 
 - Set below environment variables:
@@ -54,25 +52,24 @@ pip install tfremote
 export TF_AWS_BUCKET=<remote state bucket name>
 export TF_AWS_PROFILE=default
 export TF_AWS_BUCKET_REGION=us-west-2
-export PATH=$PATH:/usr/local/bin/
 ```  
 
-- Make required change to `examples` directory 
+- Make required change to `examples` directory.
 
 
 - Run and verify the output before deploying:
 ```
-tf -cloud aws plan
+tf -cloud aws plan -var='teamid=foo' -var='prjid=bar'
 ```
 
 - Run below to deploy:
 ```
-tf -cloud aws apply
+tf -cloud aws apply -var='teamid=foo' -var='prjid=bar'
 ```
 
 - Run below to destroy:
 ```
-tf -cloud aws destroy
+tf -cloud aws destroy -var='teamid=foo' -var='prjid=bar'
 ```
 
 > ❗️ **Important** - Two variables are required for using `tf` package:
@@ -96,7 +93,7 @@ module "ecr" {
   deploy_ecr           = true
   image_tag_mutability = "IMMUTABLE"
   deploy_image         = true
-  dockerfile_folder    = "scripts"
+  dockerfile_folder    = "../../scripts"
   # NOTE: if "deploy_ecr" is false change "ecr_repository_url" to full repository url
   ecr_repository_url = module.ecr.ecr_repository_url
   email              = "demo@demo.com"
@@ -160,5 +157,4 @@ Please refer to examples directory [link](examples) for references.
 - https://github.com/onnimonni/terraform-ecr-docker-build-module
 
 ### Note
-
 - Ensure there are executable permissions on `scripts/build.sh`

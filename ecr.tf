@@ -1,7 +1,7 @@
 resource "aws_ecr_repository" "default" {
   count = var.deploy_ecr ? 1 : 0
 
-  name                 = "${var.teamid}-${var.teamid}"
+  name                 = "${var.teamid}-${var.prjid}"
   image_tag_mutability = var.image_tag_mutability
 
   tags = merge(local.shared_tags)
