@@ -1,5 +1,4 @@
 locals {
-
   # Encryption configuration
   # If encryption type as KMS, use assigned KMS key or otherwise build a new key
   encryption_configuration = var.encryption_type != "KMS" ? [] : [
@@ -24,4 +23,6 @@ locals {
       delete = lookup(var.timeouts, "delete", null) == null ? var.timeouts_delete : lookup(var.timeouts, "delete")
     }
   ]
+
+  url = var.ecr_repository_url != null ? var.ecr_repository_url : aws_ecr_repository.default[0].repository_url
 }
