@@ -1,5 +1,3 @@
-data "aws_region" "current" {}
-
 locals {
   # Encryption configuration
   # If encryption type as KMS, use assigned KMS key or otherwise build a new key
@@ -25,9 +23,6 @@ locals {
       delete = lookup(var.timeouts, "delete", null) == null ? var.timeouts_delete : lookup(var.timeouts, "delete")
     }
   ]
-<<<<<<< HEAD
 
   url = var.ecr_repository_url != null ? var.ecr_repository_url : aws_ecr_repository.default[0].repository_url
-=======
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 resource "aws_ecr_repository" "default" {
   count = var.deploy_ecr ? 1 : 0
 
@@ -31,14 +30,4 @@ resource "aws_ecr_repository" "default" {
   }
 
   tags = merge(local.shared_tags, var.extra_tags)
-=======
-locals {
-  shared_tags = tomap(
-    {
-      "Name"    = "${var.teamid}-${var.prjid}",
-      "team"    = var.teamid,
-      "project" = var.prjid
-    }
-  )
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 }

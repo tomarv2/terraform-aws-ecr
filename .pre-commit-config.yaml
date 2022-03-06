@@ -35,8 +35,4 @@ repos:
     hooks:
     - id: checkov
       verbose: true
-<<<<<<< HEAD
       args: [-d, '.', --framework,'terraform', --skip-check, 'CKV_AWS_7,CKV_AWS_51,CKV_AWS_136,CKV_AWS_163']
-=======
-      args: [-d, '.', --framework,'terraform', --skip-check, 'CKV_AWS_7']
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c

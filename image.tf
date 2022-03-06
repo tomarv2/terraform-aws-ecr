@@ -14,13 +14,7 @@ resource "null_resource" "build_and_push" {
 
   # refer scripts/build.sh for more details
   provisioner "local-exec" {
-<<<<<<< HEAD
     command = "${path.module}/scripts/build.sh ${var.dockerfile_folder} ${local.url} ${var.image_tag_mutability} ${data.aws_region.current.name}"
   }
 
-=======
-    #command = "${path.module}/scripts/build.sh ${var.dockerfile_folder} ${var.ecr_repository_url} ${var.image_tag_mutability} ${var.aws_region}"
-    command = "${path.module}/scripts/build.sh ${var.dockerfile_folder} ${var.ecr_repository_url} ${var.image_tag_mutability} ${data.aws_region}"
-  }
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 }

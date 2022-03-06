@@ -1,17 +1,11 @@
 variable "teamid" {
   description = "Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply'"
-<<<<<<< HEAD
   type        = string
-=======
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 }
 
 variable "prjid" {
   description = "Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply'"
-<<<<<<< HEAD
   type        = string
-=======
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 }
 
 # Encryption type
@@ -71,7 +65,6 @@ variable "dockerfile_folder" {
   description = "This is the folder which contains the Dockerfile"
 }
 
-<<<<<<< HEAD
 variable "deploy_image" {
   description = "Feature flag, true or false"
   default     = true
@@ -88,15 +81,4 @@ variable "ecr_repository_url" {
   type        = string
   description = "Full url for the ecr repository"
   default     = null
-=======
-variable "ecr_repository_url" {
-  type        = string
-  description = "Full url for the ecr repository"
-}
-
-variable "deploy_image" {
-  description = "Feature flag, true or false"
-  default     = true
-  type        = bool
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 }
