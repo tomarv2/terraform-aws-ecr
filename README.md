@@ -19,7 +19,7 @@
 
 > :arrow_right:  Terraform module for [Azure Container Registry](https://registry.terraform.io/modules/tomarv2/container-registry/azure/latest)
 
-> :arrow_right:  Terraform module for [Google Container Registry](https://registry.terraform.io/modules/tomarv2/container-registry/google/latest)
+> :arrow_right:  Coming up Terraform module for [Google Artifact Registry](https://cloud.google.com/artifact-registry/docs/quickstarts)
 
 ## Versions
 
