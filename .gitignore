@@ -82,20 +82,10 @@ _testmain.go
 # Python
 # Editors
 .vscode/
-<<<<<<< HEAD
-=======
-.idea/
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 
 # Vagrant
 .vagrant/
 
-<<<<<<< HEAD
-=======
-# Mac/OSX
-.DS_Store
-
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 # Windows
 Thumbs.db
 
@@ -105,12 +95,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-<<<<<<< HEAD
-=======
-# C extensions
-*.so
-
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
 # Distribution / packaging
 .Python
 build/
@@ -215,7 +199,6 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-<<<<<<< HEAD
 # Terraform external modules
 **/.external_modules
 
@@ -227,11 +210,3 @@ dmypy.json
 
 # remote_backend.tf file
 **/remote_backend.tf
-=======
-# ignore test related file(s)
-**/test**
-**.
-
-# ignore terraform external modules
-**/.external_modules
->>>>>>> cfc10b7b3f6fa6ff7e87e870fab484397fcd804c
