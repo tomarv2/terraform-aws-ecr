@@ -1,5 +1,5 @@
 repos:
-  - repo: git://github.com/antonbabenko/pre-commit-terraform
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.60.0
     hooks:
       - id: terraform_fmt
@@ -35,4 +35,4 @@ repos:
     hooks:
     - id: checkov
       verbose: true
-      args: [-d, '.', --framework,'terraform', --skip-check, 'CKV_AWS_7']
+      args: [-d, '.', --framework,'terraform', --skip-check, 'CKV_AWS_7,CKV_AWS_51,CKV_AWS_136,CKV_AWS_163']

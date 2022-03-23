@@ -1,3 +1,5 @@
+data "aws_region" "current" {}
+
 data "external" "build_folder" {
   program = ["sh", "${path.module}/scripts/folder_contents.sh", var.dockerfile_folder]
 }
@@ -12,7 +14,7 @@ resource "null_resource" "build_and_push" {
 
   # refer scripts/build.sh for more details
   provisioner "local-exec" {
-    #command = "${path.module}/scripts/build.sh ${var.dockerfile_folder} ${var.ecr_repository_url} ${var.image_tag_mutability} ${var.aws_region}"
-    command = "${path.module}/scripts/build.sh ${var.dockerfile_folder} ${var.ecr_repository_url} ${var.image_tag_mutability} ${data.aws_region}"
+    command = "${path.module}/scripts/build.sh ${var.dockerfile_folder} ${local.url} ${var.image_tag_mutability} ${data.aws_region.current.name}"
   }
+
 }

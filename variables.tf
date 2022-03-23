@@ -1,9 +1,11 @@
 variable "teamid" {
   description = "Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply'"
+  type        = string
 }
 
 variable "prjid" {
   description = "Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply'"
+  type        = string
 }
 
 # Encryption type
@@ -16,13 +18,6 @@ variable "encryption_type" {
 # KMS key
 variable "kms_key" {
   description = "The ARN of the KMS key to use when encryption_type is `KMS`. If not specified when encryption_type is `KMS`, uses a new KMS key. Otherwise, uses the default AWS managed key for ECR."
-  type        = string
-  default     = null
-}
-
-# Lifecycle policy
-variable "lifecycle_policy" {
-  description = "Manages the ECR repository lifecycle policy"
   type        = string
   default     = null
 }
@@ -65,19 +60,25 @@ variable "deploy_ecr" {
   type        = bool
 }
 
-#
 variable "dockerfile_folder" {
   type        = string
   description = "This is the folder which contains the Dockerfile"
-}
-
-variable "ecr_repository_url" {
-  type        = string
-  description = "Full url for the ecr repository"
 }
 
 variable "deploy_image" {
   description = "Feature flag, true or false"
   default     = true
   type        = bool
+}
+
+variable "extra_tags" {
+  description = "Additional tags to associate"
+  type        = map(string)
+  default     = {}
+}
+
+variable "ecr_repository_url" {
+  type        = string
+  description = "Full url for the ecr repository"
+  default     = null
 }
